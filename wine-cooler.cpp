@@ -13,7 +13,7 @@ float hAmbient = NAN;
 const float targetTLow = 55;
 const float targetTHigh = 58;
 
-const bool debug = true;
+const bool debug = false;
 unsigned long lastDebugReportTime = 0;
 const float delayTime = 15000;
 
@@ -172,11 +172,10 @@ void loop() {
     }
   }
 
-  if (debug || (currentTime - lastDebugReportTime) >= 10*60*1000) {
+  if (debug || (currentTime - lastDebugReportTime) >= 10.0*60.0*1000.0) {
     report(sensors);  
     lastDebugReportTime = currentTime;
   }
   
   delay(delayTime);
 }
-
